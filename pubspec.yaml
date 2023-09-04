@@ -94,6 +94,11 @@ flutter:
         - weight: 300
         - asset: asset/fonts/NotoSansKR-Thin.otf
         - weight: 100
+    - family: Changwon
+      fonts:
+        - asset: assets/fonts/ChangwonDangamAsac-Bold_0712.otf
+        - weight: 700
+
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
