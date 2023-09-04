@@ -96,7 +96,7 @@ flutter:
         - weight: 100
     - family: Changwon
       fonts:
-        - asset: assets/fonts/ChangwonDangamAsac-Bold_0712.otf
+        - asset: asset/fonts/ChangwonDangamAsac-Bold_0712.otf
         - weight: 700
 
 
