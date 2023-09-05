@@ -1,3 +1,4 @@
+import 'package:b612_flutter_ui/common/view/tab_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,9 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const Scaffold(
-        body: Center(
-          child: Text('Hello, world!'),
-        ),
+        body: TabView(),
       ),
     );
   }
