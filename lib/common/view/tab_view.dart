@@ -1,7 +1,7 @@
 import 'package:b612_flutter_ui/common/component/custom_appbar.dart';
 import 'package:b612_flutter_ui/common/const/colors.dart';
 import 'package:b612_flutter_ui/common/layout/default_layout.dart';
-import 'package:b612_flutter_ui/common/view/home_page.dart';
+import 'package:b612_flutter_ui/common/view/homepage.dart';
 import 'package:flutter/material.dart';
 
 class TabView extends StatefulWidget {
