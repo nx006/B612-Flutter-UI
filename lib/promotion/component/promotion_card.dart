@@ -1,8 +1,8 @@
 import 'package:b612_flutter_ui/common/const/colors.dart';
 import 'package:flutter/material.dart';
 
-class PromotionCard extends StatelessWidget {
-  const PromotionCard({super.key});
+class EventCard extends StatelessWidget {
+  const EventCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class PromotionCard extends StatelessWidget {
                   Text(
                     '더행사 첫 이벤트',
                     style: TextStyle(
-                      color: kHighlightTextColor,
+                      color: kSecondaryHighlightColor,
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                     ),
@@ -48,18 +48,17 @@ class PromotionCard extends StatelessWidget {
             Align(
               alignment: Alignment.bottomRight,
               child: Container(
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: kSecondaryHighlightColor,
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.all(12.0),
-                  child: Icon(
-                    Icons.arrow_forward_rounded,
-                    color: kTextFieldColor,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: kSecondaryHighlightColor,
                   ),
-                ),
-              ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(12.0),
+                    child: Icon(
+                      Icons.arrow_forward_rounded,
+                      color: kTextFieldColor,
+                    ),
+                  )),
             ),
           ],
         ),
