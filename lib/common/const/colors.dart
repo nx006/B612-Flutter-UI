@@ -10,7 +10,7 @@ const kTextFieldColor = Color(0xFF484848);
 const kHighlightTextColor = Color(0xFFB6FFCB);
 
 /// 하이라이트 색상
-const kPrimaryHighlightColor2 = Color(0xFF83D0AB);
+const kPrimaryHighlightColor = Color(0xFF83D0AB);
 
 /// Secondary 하이라이트 색상 (연한 녹색)
 const kSecondaryHighlightColor = Color(0xFFB0E7C9);
