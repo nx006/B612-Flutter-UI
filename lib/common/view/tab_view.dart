@@ -11,27 +11,26 @@ class TabView extends StatefulWidget {
 }
 
 class _TabViewState extends State<TabView> with TickerProviderStateMixin {
-  late TabController tabController;
-  int index = 0;
+  late TabController _tabController;
+  int _index = 0;
 
   @override
   void initState() {
     super.initState();
 
-    tabController = TabController(length: 4, vsync: this);
-    tabController.addListener(tabListener);
+    _tabController = TabController(length: _navItems.length, vsync: this);
+    _tabController.addListener(tabListener);
   }
 
   @override
   void dispose() {
-    tabController.removeListener(tabListener);
-
+    _tabController.removeListener(tabListener);
     super.dispose();
   }
 
   void tabListener() {
     setState(() {
-      index = tabController.index;
+      _index = _tabController.index;
     });
   }
 
@@ -42,33 +41,30 @@ class _TabViewState extends State<TabView> with TickerProviderStateMixin {
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: kPrimaryDarkColor,
         unselectedItemColor: kPrimaryDarkColor,
+        selectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 10,
+        ),
+        unselectedLabelStyle: const TextStyle(
+          fontSize: 10,
+        ),
         type: BottomNavigationBarType.fixed,
         onTap: (int index) {
-          tabController.animateTo(index);
+          _tabController.animateTo(index);
         },
-        currentIndex: index,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: '홈',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: '스케줄',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat_outlined),
-            label: '채팅',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'My',
-          ),
-        ],
+        currentIndex: _index,
+        items: _navItems.map((item) {
+          return BottomNavigationBarItem(
+            icon: Icon(
+              _index == item.index ? item.activeIcon : item.inactiveIcon,
+            ),
+            label: item.label,
+          );
+        }).toList(),
       ),
       child: TabBarView(
         physics: const NeverScrollableScrollPhysics(),
-        controller: tabController,
+        controller: _tabController,
         children: const [
           Center(child: Text('홈')),
           Center(child: Text('스케줄')),
@@ -79,3 +75,44 @@ class _TabViewState extends State<TabView> with TickerProviderStateMixin {
     );
   }
 }
+
+class NavItem {
+  final int index;
+  final IconData activeIcon;
+  final IconData inactiveIcon;
+  final String label;
+
+  const NavItem({
+    required this.index,
+    required this.activeIcon,
+    required this.inactiveIcon,
+    required this.label,
+  });
+}
+
+const _navItems = [
+  NavItem(
+    index: 0,
+    activeIcon: Icons.home,
+    inactiveIcon: Icons.home_outlined,
+    label: '홈',
+  ),
+  NavItem(
+    index: 1,
+    activeIcon: Icons.calendar_today,
+    inactiveIcon: Icons.calendar_today_outlined,
+    label: '스케줄',
+  ),
+  NavItem(
+    index: 2,
+    activeIcon: Icons.chat,
+    inactiveIcon: Icons.chat_outlined,
+    label: '채팅',
+  ),
+  NavItem(
+    index: 3,
+    activeIcon: Icons.person,
+    inactiveIcon: Icons.person_outline,
+    label: 'My',
+  ),
+];
