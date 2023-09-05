@@ -1,6 +1,7 @@
 import 'package:b612_flutter_ui/common/component/custom_appbar.dart';
 import 'package:b612_flutter_ui/common/const/colors.dart';
 import 'package:b612_flutter_ui/common/layout/default_layout.dart';
+import 'package:b612_flutter_ui/common/view/home_page.dart';
 import 'package:flutter/material.dart';
 
 class TabView extends StatefulWidget {
@@ -66,7 +67,7 @@ class _TabViewState extends State<TabView> with TickerProviderStateMixin {
         physics: const NeverScrollableScrollPhysics(),
         controller: _tabController,
         children: const [
-          Center(child: Text('홈')),
+          HomePage(),
           Center(child: Text('스케줄')),
           Center(child: Text('채팅')),
           Center(child: Text('My')),
