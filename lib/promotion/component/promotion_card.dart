@@ -1,8 +1,8 @@
 import 'package:b612_flutter_ui/common/const/colors.dart';
 import 'package:flutter/material.dart';
 
-class EventCard extends StatelessWidget {
-  const EventCard({super.key});
+class PromotionCard extends StatelessWidget {
+  const PromotionCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,17 +48,18 @@ class EventCard extends StatelessWidget {
             Align(
               alignment: Alignment.bottomRight,
               child: Container(
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: kSecondaryHighlightColor,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: kSecondaryHighlightColor,
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Icon(
+                    Icons.arrow_forward_rounded,
+                    color: kTextFieldColor,
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.all(12.0),
-                    child: Icon(
-                      Icons.arrow_forward_rounded,
-                      color: kTextFieldColor,
-                    ),
-                  )),
+                ),
+              ),
             ),
           ],
         ),
