@@ -26,7 +26,7 @@ class PromotionCard extends StatelessWidget {
                   Text(
                     '더행사 첫 이벤트',
                     style: TextStyle(
-                      color: kSecondaryHighlightColor,
+                      color: kHighlightTextColor,
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                     ),
