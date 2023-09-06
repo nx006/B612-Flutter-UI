@@ -39,6 +39,8 @@ class _TabViewState extends State<TabView> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return DefaultLayout(
       bottomNavigationBar: BottomNavigationBar(
+        // backgroundColor: Colors.transparent,
+        // elevation: 0.0,
         selectedItemColor: kPrimaryDarkColor,
         unselectedItemColor: kPrimaryDarkColor,
         selectedLabelStyle: const TextStyle(

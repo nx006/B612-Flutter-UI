@@ -26,4 +26,19 @@ const _initialState = <EventModel>[
     price: 150,
     thumbnail: 'asset/images/event3.jpeg',
   ),
+  EventModel(
+    title: '홍익대학교 체육대회',
+    price: 100,
+    thumbnail: 'asset/images/event1.jpeg',
+  ),
+  EventModel(
+    title: '월드컵',
+    price: 90,
+    thumbnail: 'asset/images/event2.jpeg',
+  ),
+  EventModel(
+    title: '매우매우매우매우긴 제목을 가진 대회의 경우',
+    price: 150,
+    thumbnail: 'asset/images/event3.jpeg',
+  ),
 ];
