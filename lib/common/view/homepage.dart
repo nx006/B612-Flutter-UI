@@ -26,6 +26,9 @@ class HomePage extends StatelessWidget {
                 fontWeight: FontWeight.w800,
               ),
             ),
+            SizedBox(
+              height: 16,
+            ),
             Expanded(
               child: EventListView(),
             ),
