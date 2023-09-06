@@ -1,6 +1,11 @@
 import 'package:b612_flutter_ui/event/model/event_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+final eventProvider =
+    StateNotifierProvider<EventStateNotifier, List<EventModel>>(
+  (ref) => EventStateNotifier(),
+);
+
 class EventStateNotifier extends StateNotifier<List<EventModel>> {
   EventStateNotifier() : super([..._initialState]);
 }
