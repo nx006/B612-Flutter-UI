@@ -1,7 +1,7 @@
-import 'package:b612_flutter_ui/common/component/custom_appbar.dart';
 import 'package:b612_flutter_ui/common/const/colors.dart';
 import 'package:b612_flutter_ui/common/layout/default_layout.dart';
 import 'package:b612_flutter_ui/common/view/homepage.dart';
+import 'package:b612_flutter_ui/schedule/view/schedule_page.dart';
 import 'package:flutter/material.dart';
 
 class TabView extends StatefulWidget {
@@ -38,7 +38,6 @@ class _TabViewState extends State<TabView> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
-      appBar: const CustomAppbar(title: '더행사'),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: kPrimaryDarkColor,
         unselectedItemColor: kPrimaryDarkColor,
@@ -68,7 +67,7 @@ class _TabViewState extends State<TabView> with TickerProviderStateMixin {
         controller: _tabController,
         children: const [
           HomePage(),
-          Center(child: Text('스케줄')),
+          SchedulePage(),
           Center(child: Text('채팅')),
           Center(child: Text('My')),
         ],
